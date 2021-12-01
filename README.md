@@ -39,3 +39,17 @@ Added class ContaCorrente
 
 - Adicionado novos métodos na classe Layout ( interação com usuário )
 Added new methods in the layout class ( user interaction )
+
+## Update 0.4
+
+- Adicionado funcionalidades: Sacar, Depositar, Saldo, Extrato
+Added features: Withdraw, Deposit, Balance, Statement
+
+- Adicionada nova classe Extrato
+Added new class Extrato ( balance statement )
+
+- Adicionado novo contrato na interface IConta ( Lista )
+Added new contract in IConta interface ( List )
+
+- Implementada funcionalidade de ver balanço de movimentações
+Functionality to see balance of movements implemented
