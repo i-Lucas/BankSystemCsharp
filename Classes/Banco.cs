@@ -5,7 +5,7 @@ namespace BankSystemCsharp.Classes
         public Banco() // Construtor - Constructor
         {
             this.NomeDoBanco = "GitHub Bank";  // Setando valores padrão
-            this.CodigoDoBanco = "0227";        // Setting default values
+            this.CodigoDoBanco = "007";        // Setting default values
         }
         // Contratos
         public string NomeDoBanco{get; private set;}

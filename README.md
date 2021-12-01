@@ -34,3 +34,8 @@ Added class Pessoa
 
 - Adicionada classe ContaCorrente
 Added class ContaCorrente
+
+## Update 0.3
+
+- Adicionado novos métodos na classe Layout ( interação com usuário )
+Added new methods in the layout class ( user interaction )

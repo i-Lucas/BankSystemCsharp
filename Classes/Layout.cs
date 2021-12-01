@@ -1,4 +1,5 @@
 using System.Collections.Generic; // Required to implement List <>
+using System.Linq; // Required to implement FirstOrDefault <>
 using System.Threading; // Required to implement Thread.Sleep
 using System;
 
@@ -46,7 +47,6 @@ namespace BankSystemCsharp.Classes
             }
 
         }
-
         private static void TelaCriarConta()
         {
             Console.Clear();
@@ -97,6 +97,11 @@ namespace BankSystemCsharp.Classes
             Console.WriteLine("                     CONTA CADASTRADA COM SUCESSO !                           ");
             Console.WriteLine("                                                                              ");
             Console.WriteLine("==============================================================================");
+
+            Thread.Sleep(1500); 
+            // Esperar 1.5 segundo até chamar a função abaixo
+            // Wait 1.5 seconds to call the function below
+            TelaContaLogada(cliente);
         }
 
         private static void TelaLogin()
@@ -111,8 +116,89 @@ namespace BankSystemCsharp.Classes
             Console.WriteLine("                             DIGITE SUA SENHA:                                ");
             string obterSenha = Console.ReadLine();
             Console.WriteLine("==============================================================================");
+
+            Pessoa pessoa = pessoas.FirstOrDefault(x => x.cpfUsuario == obterCpf && x.senhaUsuario == obterSenha);
+            // Verificando os dados da pessoa da lista para retornar se existe ou não
+            // Checking the person's data on the list to return whether or not it exists
+
+            if (pessoa != null)
+            {
+                TelaContaLogada(pessoa);
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("==============================================================================");
+                Console.WriteLine("                                                                              ");
+                Console.WriteLine("                     CONTA NÃO CADASTRADA NO SISTEMA!                         ");
+                Console.WriteLine("                                                                              ");
+                Console.WriteLine("==============================================================================");
+            }
         }
 
+        private static void TelaContaLogada(Pessoa pessoa)
+        {
+            Console.Clear();
+            TelaBoasVindas(pessoa);           
+
+            Console.WriteLine("==============================================================================");
+            Console.WriteLine("                                                                              ");
+            Console.WriteLine("                         DIGITE A OPÇÃO DESEJADA:                             ");
+            Console.WriteLine("                                                                              ");
+            Console.WriteLine("==============================================================================");
+            Console.WriteLine("                                                                              ");
+            Console.WriteLine("                         1 - REALIZAR DEPÓSITO                                ");
+            Console.WriteLine("                                                                              ");
+            Console.WriteLine("                         2 - REALIZAR SAQUE                                   ");
+            Console.WriteLine("                                                                              ");
+            Console.WriteLine("                         3 - CONSULTAR SALDO                                  ");
+            Console.WriteLine("                                                                              ");
+            Console.WriteLine("                         4 - CONSULTAR EXTRATO                                ");
+            Console.WriteLine("                                                                              ");
+            Console.WriteLine("                         5 - SAIR                                             ");
+            Console.WriteLine("                                                                              ");
+            Console.WriteLine("==============================================================================");
+
+            opcao = int.Parse(Console.ReadLine());
+            // Armazenar a opção digitada e jogar na variável opcao convertida em Int
+
+            switch (opcao)
+            {
+                case 1:
+                    //  TelaDeposito(pessoa);
+                    break;
+                case 2:
+                    // TelaSaque(pessoa);
+                    break;
+                case 3:
+                    //  TelaSaldo(pessoa);
+                    break;
+                case 4:
+                    //  TelaExtrato(pessoa);
+                    break;
+                case 5:
+                    TelaPrincipal();
+                    break;
+                default:
+                    Console.Clear();
+                    Console.WriteLine("==============================================================================");
+                    Console.WriteLine("                                                                              ");
+                    Console.WriteLine("                            OPÇÃO INVÁLIDA !                                  ");
+                    Console.WriteLine("                                                                              ");
+                    Console.WriteLine("==============================================================================");
+                    break;
+            }
+        }
+
+        // Parâmetro recebido ( uma pessoa ) - Parameter received ( one person )
+        private static void TelaBoasVindas(Pessoa pessoa)
+        {
+            string mensagem =
+            $"  SEJA BEM VINDO {pessoa.nomeUsuario} | BANCO: {pessoa.ContaUsuario.GetCodigoBanco()} " +
+            $"| AGÊNCIA: {pessoa.ContaUsuario.GetNumeroAgencia()} | CONTA: {pessoa.ContaUsuario.GetNumeroConta()} |";
+
+            Console.WriteLine("\n" + mensagem + "\n");
+        }
 
     }
 }
