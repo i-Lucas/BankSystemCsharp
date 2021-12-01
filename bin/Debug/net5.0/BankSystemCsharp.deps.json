@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "BankSystemCsharp/1.0.0": {
+        "runtime": {
+          "BankSystemCsharp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BankSystemCsharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

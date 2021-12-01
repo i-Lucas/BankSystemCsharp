@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankSystemCsharp.Classes;
+using System;
 
 namespace BankSystemCsharp
 {
@@ -6,7 +7,7 @@ namespace BankSystemCsharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Layout.TelaPrincipal();
         }
     }
 }
