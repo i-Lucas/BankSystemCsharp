@@ -10,10 +10,27 @@ O sistema já tinha sido escrito sem versionamento, agora estará sendo reescrit
 ## Update 0.1
 
 - Criando aplicação console
-- Creating console application
+Creating console application
 
 - Criando as pastas do projeto
-- Creating Project Folders
+Creating Project Folders
 
 - Adicionada a classe Layout
-- Added Layout class
+Added Layout class
+
+## Update 0.2
+
+- Adicionada Interface IConta
+Added Interface IConta
+
+- Adicionada classe abstrata Banco
+Added abstract class Banco
+
+- Adicionada classe abstrata Conta
+Added abstract class Conta
+
+- Adicionada classe Pessoa
+Added class Pessoa
+
+- Adicionada classe ContaCorrente
+Added class ContaCorrente
